@@ -1,0 +1,8 @@
+require 'digest'
+hash = Digest::SHA256.hexdigest('password')
+('aaaa'..'zzzz').each do |guess|
+  if Digest::SHA256.hexdigest(guess) == hash
+    puts "Password cracked! It was '#{guess}'"
+    break
+  end
+end
